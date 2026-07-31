@@ -1,0 +1,37 @@
+{
+  "workflow": "prototype-loop",
+  "version": 1,
+  "projectId": "prototype-852ae282",
+  "entry": "index.html",
+  "stage": "verified",
+  "artifacts": {
+    "requirements": "docs/requirements.md",
+    "decisions": "docs/decisions.md",
+    "projectMemory": "memory/project.md",
+    "businessRules": "memory/business-rules.md",
+    "taskPlan": "memory/task-plan.md",
+    "executionSteps": "memory/execution-steps.md",
+    "acceptanceMap": "memory/acceptance-map.md",
+    "verificationLog": "memory/verification-log.md",
+    "openItems": "memory/open-items.md",
+    "changeLog": "memory/change-log.md",
+    "annotations": "annotations/annotations.js",
+    "interactionDoc": "docs/interaction.html"
+  },
+  "verification": {
+    "serveOverHttp": true,
+    "checkJavaScriptSyntax": true,
+    "checkLocalResourcePaths": true,
+    "checkConsoleErrors": true,
+    "checkNavigation": true,
+    "checkCoreFlows": true,
+    "checkResponsive": true,
+    "checkAnnotations": true
+  },
+  "gates": {
+    "requirePlanBeforeImplementation": true,
+    "requireStepVerification": true,
+    "requireGlobalVerificationBeforeAnnotations": true,
+    "requireValidationBeforeHandoff": true
+  }
+}

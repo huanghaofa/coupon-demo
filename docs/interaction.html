@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商城卡券结算原型 - 交互说明</title>
+  <style>body{max-width:920px;margin:40px auto;padding:0 24px;color:#202636;font:14px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}a{color:#245bdb}h1{font-size:26px}h2{margin-top:28px;font-size:18px}li{margin:8px 0}.note{padding:14px 16px;background:#f0f5ff;border-left:4px solid #245bdb;border-radius:6px}</style>
+</head>
+<body>
+  <a href="../index.html">← 返回演示页面</a>
+  <h1>商城卡券结算原型交互说明</h1>
+  <p class="note">本原型不引入账期，以单张卡券实例记录核销渠道、核销来源、四项价格快照、退款变化和应结算金额。</p>
+  <h2>1. 实例结算报表</h2>
+  <ul><li>使用快速搜索、核销渠道、核销来源和结算状态进行筛选。</li><li>主表每行对应一个卡券实例 ID，用户标识只保留 VIN、手机号码、oneID 三列，不展示归属类型。</li><li>商城来源展示为线上核销，E3S 来源展示为线下核销；核销来源与最终统一提交 E3S 分开表达。</li><li>商城逐商品回传适用标记和价格，主表金额只汇总适用商品；卡券面值来自卡券中心。</li></ul>
+  <h2>2. 实例详情</h2>
+  <ul><li>点击实例 ID 或“详情”打开抽屉。</li><li>商品表逐项展示适用/不适用和原因；不适用商品灰显且优惠为 0，不进入计算。</li><li>四项价格卡片只汇总适用商品，并突出当前规则选中的价格标准。</li><li>计算区展示“先过滤适用商品，再按原规则计算”的结算基数及预计或最终结果。</li></ul>
+  <h2>3. E3S 结算</h2>
+  <ul><li>商城通知订单已不可退款后，卡券中心冻结最终金额。</li><li>每次订单冻结后，系统自动调用一次 E3S 结算接口，并携带实际存在的 VIN、手机号码和 oneID。</li><li>E3S 提交记录同样只展示 VIN、手机号码、oneID 三列。</li><li>无人工勾选、无确认弹窗、无结算批次；通过“E3S 提交记录”查看结果。</li></ul>
+  <h2>4. 卡券规则设置</h2>
+  <ul><li>沿用原页面的规则 ID、模板 ID、模板名称查询，以及新建、编辑、删除和导出。</li><li>规则列表和新增/编辑弹窗均不显示结算渠道。</li><li>每套规则固定同时展示并维护线上配置、线下补贴条件、线下计算规则和上门取送车条件。</li><li>实际结算时读取卡券实例核销渠道：线上使用线上配置，线下使用线下配置。</li><li>线上结算价格标准值保留商城商品单价、实际优惠金额、卡券面值和网点价四个选项，并在选项旁标记商城传入或卡券中心读取。</li><li>已有核销记录的规则禁止编辑和删除；未产生核销的规则可正常维护。</li></ul>
+</body>
+</html>

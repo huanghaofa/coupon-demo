@@ -1,0 +1,23 @@
+{
+  "defaultPage": "settlement-report",
+  "menu": [
+    {
+      "key": "coupon-center",
+      "label": "卡券中心",
+      "icon": "◇",
+      "children": [
+        { "key": "settlement-report", "label": "实例结算报表", "icon": "▤" },
+        { "key": "e3s-submissions", "label": "E3S 提交记录", "icon": "⇄" },
+        { "key": "rule-config", "label": "卡券规则设置", "icon": "⊙" }
+      ]
+    },
+    {
+      "key": "data-center",
+      "label": "数据管理",
+      "icon": "◈",
+      "children": [
+        { "key": "sync-monitor", "label": "商城数据同步", "icon": "↻" }
+      ]
+    }
+  ]
+}
